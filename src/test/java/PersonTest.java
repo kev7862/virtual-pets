@@ -64,15 +64,6 @@ public void save_assignsIdToObject() {
    assertEquals(testPerson.getId(), savedPerson.getId());
  }
 
- public void save() {
-  try(Connection con = DB.sql2o.open()) {
-    String sql = "INSERT INTO persons (name, email) VALUES (:name, :email)";
-    this.id = (int) con.createQuery(sql, true)
-      .addParameter("name", this.name)
-      .addParameter("email", this.email)
-      .executeUpdate()
-      .getKey();
-  }
-}
+
 
 }

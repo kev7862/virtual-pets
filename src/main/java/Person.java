@@ -7,9 +7,10 @@ public class Person {
   private String email;
   private int id;
 
-  public Person(String name, String email) {
+  public Person(String name, String email, int id) {
     this.name = name;
     this.email = email;
+    this.id = id;
   }
 
   public String getName() {
@@ -19,6 +20,10 @@ public class Person {
   public String getEmail() {
     return email;
   }
+
+  public int getId() {
+   return id;
+ }
 
   @Override
   public boolean equals(Object otherPerson){
@@ -47,4 +52,16 @@ public class Person {
     return con.createQuery(sql).executeAndFetch(Person.class);
    }
  }
+
+ public void save() {
+  try(Connection con = DB.sql2o.open()) {
+    String sql = "INSERT INTO persons (name, email) VALUES (:name, :email)";
+    this.id = (int) con.createQuery(sql, true)
+      .addParameter("name", this.name)
+      .addParameter("email", this.email)
+      .executeUpdate()
+      .getKey();
+  }
+}
+
 }
