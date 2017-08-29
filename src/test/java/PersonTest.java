@@ -56,4 +56,12 @@ public void save_assignsIdToObject() {
   assertEquals(testPerson.getId(), savedPerson.getId());
 }
 
+@Test
+ public void save_assignsIdToObject() {
+   Person testPerson = new Person("Henry", "henry@henry.com");
+   testPerson.save();
+   Person savedPerson = Person.all().get(0);
+   assertEquals(testPerson.getId(), savedPerson.getId());
+ }
+
 }
