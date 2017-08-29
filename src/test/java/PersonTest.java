@@ -1,5 +1,6 @@
 import org.junit.*;
 import static org.junit.Assert.*;
+import org.sq120.*;
 
 public class PersonTest {
 
@@ -26,5 +27,12 @@ public void equals_returnsTrueIfNameAndEmailAreSame_true() {
   Person anotherPerson = new Person("Henry", "[email protected]");
   assertTrue(firstPerson.equals(anotherPerson));
 }
+
+@Test
+ public void save_insertsObjectIntoDatabase_Person() {
+   Person testPerson = new Person("Henry", "[email protected]");
+   testPerson.save();
+   assertTrue(Person.all().get(0).equals(testPerson));
+ }
 
 }
