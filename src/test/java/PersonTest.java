@@ -35,8 +35,6 @@ public void equals_returnsTrueIfNameAndEmailAreSame_true() {
    assertTrue(Person.all().get(0).equals(testPerson));
  }
 
- public class PersonTest {
-
   @Rule
   public DatabaseRule database = new DatabaseRule();
 
