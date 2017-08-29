@@ -1,6 +1,6 @@
 import org.junit.*;
 import static org.junit.Assert.*;
-import org.sq120.*;
+import org.sq12o.*;
 
 public class PersonTest {
 

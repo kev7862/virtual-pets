@@ -1,3 +1,5 @@
+import org.sq12o.*;
+
 public class Person {
   private String name;
   private String email;
@@ -23,6 +25,16 @@ public class Person {
       Person newPerson = (Person) otherPerson;
       return this.getName().equals(newPerson.getName()) &&
              this.getEmail().equals(newPerson.getEmail());
+    }
+  }
+
+  public void save() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO persons (name, email) VALUES (:name, :email)";
+      con.createQuery(sql)
+        .addParameter("name", this.name)
+        .addParameter("email", this.email)
+        .executeUpdate();
     }
   }
 }
