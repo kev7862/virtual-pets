@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import org.sq12o.*;
 
 public class Person {
@@ -37,4 +39,11 @@ public class Person {
         .executeUpdate();
     }
   }
+
+  public static List<Person> all() {
+   String sql = "SELECT * FROM persons";
+   try(Connection con = DB.sql2o.open()) {
+    return con.createQuery(sql).executeAndFetch(Person.class);
+   }
+ }
 }
