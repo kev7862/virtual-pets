@@ -120,5 +120,12 @@ public void isAlive_recognizesMonsterIsDeadWhenLevelsReachMinimum_false(){
   }
   assertEquals(testMonster.isAlive(), false);
 }
+// Method that allows Users interact with their pets.
+@Test
+ public void play_increasesMonsterPlayLevel(){
+   Monster testMonster = new Monster("Bubbles", 1);
+   testMonster.play();
+   assertTrue(testMonster.getPlayLevel() > (Monster.MAX_PLAY_LEVEL / 2));
+ }
 
 }
