@@ -101,5 +101,24 @@ assertEquals(savedMonster.getPersonId(), testPerson.getId());
    Monster testMonster = new Monster("Bubbles", 1);
    assertEquals(testMonster.isAlive(), true);
  }
+// Confirms the isAlive() method accurately determine when it has died
+// Decreases all values by 1 each time it runs
+ @Test
+ public void depleteLevels_reducesAllLevels(){
+   Monster testMonster = new Monster("Bubbles", 1);
+   testMonster.depleteLevels();
+   assertEquals(testMonster.getFoodLevel(), (Monster.MAX_FOOD_LEVEL / 2) - 1);
+   assertEquals(testMonster.getSleepLevel(), (Monster.MAX_SLEEP_LEVEL / 2) - 1);
+   assertEquals(testMonster.getPlayLevel(), (Monster.MAX_PLAY_LEVEL / 2) - 1);
+ }
+
+ @Test
+public void isAlive_recognizesMonsterIsDeadWhenLevelsReachMinimum_false(){
+  Monster testMonster = new Monster("Bubbles", 1);
+  for(int i = Monster.MIN_ALL_LEVELS; i <= Monster.MAX_FOOD_LEVEL; i++){
+    testMonster.depleteLevels();
+  }
+  assertEquals(testMonster.isAlive(), false);
+}
 
 }

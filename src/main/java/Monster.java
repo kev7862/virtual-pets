@@ -97,5 +97,12 @@ public boolean isAlive() {
   }
   return true;
 }
+// Confirms the isAlive() method accurately determine when it has died
+// Decreases all values by 1 each time it runs
+public void depleteLevels(){
+    playLevel--;
+    foodLevel--;
+    sleepLevel--;
+  }
 
 }
