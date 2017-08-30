@@ -19,4 +19,10 @@ public void Monster_instatiatesWithName_String() {
   assertEquals("Bubbles", testMonster.getName());
 }
 
+@Test
+public void Monster_instatiatesWithPersonId_int() {
+  Monster testonster = new Monster("Bubbles", 1);
+  assertEquals(1, testMonster.getPersonId());
+}
+
 }
