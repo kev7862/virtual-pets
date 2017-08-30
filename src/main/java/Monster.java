@@ -104,9 +104,17 @@ public void depleteLevels(){
     foodLevel--;
     sleepLevel--;
   }
-// Tests whether the play level has increased beyond the default after the play() method has been called.
+// Tests whether the play, sleep, feed level has increased beyond the default after the play() method has been called.
   public void play(){
     playLevel++;
+  }
+
+  public void sleep(){
+    sleepLevel++;
+  }
+
+  public void feed(){
+    feedLevel++;
   }
 
 }
