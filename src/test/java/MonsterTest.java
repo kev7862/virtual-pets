@@ -128,4 +128,14 @@ public void isAlive_recognizesMonsterIsDeadWhenLevelsReachMinimum_false(){
    assertTrue(testMonster.getPlayLevel() > (Monster.MAX_PLAY_LEVEL / 2));
  }
 
+// Checks if the User tries to break our application e.g. by trying to feed our pet too much food
+ @Test
+ public void monster_foodLevelCannotGoBeyondMaxValue(){
+   Monster testMonster = new Monster("Bubbles", 1);
+   for(int i = Monster.MIN_ALL_LEVELS; i <= (Monster.MAX_FOOD_LEVEL + 2); i++){
+     testMonster.feed();
+   }
+   assertTrue(testMonster.getFoodLevel() <= Monster.MAX_FOOD_LEVEL);
+ }
+
 }
