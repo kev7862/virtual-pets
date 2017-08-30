@@ -77,5 +77,23 @@ testMonster.save();
 Monster savedMonster = Monster.find(testMonster.getId());
 assertEquals(savedMonster.getPersonId(), testPerson.getId());
 }
+//instantiating with half full playLevel.
+@Test
+  public void monster_instantiatesWithHalfFullPlayLevel(){
+    Monster testMonster = new Monster("Bubbles", 1);
+    assertEquals(testMonster.getPlayLevel(), (Monster.MAX_PLAY_LEVEL / 2));
+  }
+//instatiating with half full sleep level
+  @Test
+ public void monster_instantiatesWithHalfFullSleepLevel(){
+   Monster testMonster = new Monster("Bubbles", 1);
+   assertEquals(testMonster.getSleepLevel(), (Monster.MAX_SLEEP_LEVEL / 2));
+ }
+// Instatiating with half-full foodLevel.
+ @Test
+ public void monster_instantiatesWithHalfFullFoodLevel(){
+   Monster testMonster = new Monster("Bubbles", 1);
+   assertEquals(testMonster.getFoodLevel(), (Monster.MAX_FOOD_LEVEL / 2));
+ }
 
 }

@@ -19,6 +19,11 @@ public class Monster {
   public Monster(String name, int personId) {
     this.name = name;
     this.personId = personId;
+
+    // Instantiating with half-full Levels, that way a user gets to interact with the monster after creation.
+    this.playLevel = MAX_PLAY_LEVEL / 2;
+    this.sleepLevel = MAX_SLEEP_LEVEL / 2;
+    this.foodLevel = MAX_FOOD_LEVEL / 2;
   }
   public String getName() {
     return name;
@@ -30,6 +35,18 @@ public class Monster {
 
   public int getId() {
     return id;
+  }
+//get() method for the constant levels
+  public int getPlayLevel() {
+    return playLevel;
+  }
+
+  public int getSleepLevel() {
+    return sleepLevel;
+  }
+
+  public int getFoodLevel() {
+    return foodLevel;
   }
 
   @Override
@@ -69,4 +86,5 @@ public static List<Monster> all() {
     return monster;
   }
 }
+
 }
