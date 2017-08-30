@@ -67,7 +67,7 @@ public void find_returnsMonsterWithSameId_secondMonster() {
   assertEquals(Monster.find(secondMonster.getId()), secondMonster);
 }
 
-//Testing one to many relationship between person and monsters.
+//Testing one to many relationship between Person and Monster class.
 @Test
 public void save_savesPersonIdIntoDB_true() {
 Person testPerson = new Person ("Henry", "henry@henry.com");
