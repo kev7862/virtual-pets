@@ -6,6 +6,9 @@ public class Monster {
   private String name;
   private int personId;
   private int id;
+  private int playLevel;
+  private int sleepLevel;
+  private int foodLevel;
 
   public Monster(String name, int personId) {
     this.name = name;
