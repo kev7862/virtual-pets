@@ -83,8 +83,19 @@ public static List<Monster> all() {
     Monster monster = con.createQuery(sql)
       .addParameter("id", id)
       .executeAndFetchFirst(Monster.class);
-    return monster;
   }
+}
+// THIS MEANS IF OUR monster'S  FOOD, PLAY, OR SLEEP LEVEL GETS TO O THEY DIE.
+public static final int MIN_ALL_LEVELS = 0;
+
+// This method checks if our monster is alive or dead.
+public boolean isAlive() {
+  if (foodLevel <= MIN_ALL_LEVELS ||
+  playLevel <= MIN_ALL_LEVELS ||
+  sleepLevel <= MIN_ALL_LEVELS) {
+    return false;
+  }
+  return true;
 }
 
 }

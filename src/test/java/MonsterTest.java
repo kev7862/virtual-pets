@@ -95,5 +95,11 @@ assertEquals(savedMonster.getPersonId(), testPerson.getId());
    Monster testMonster = new Monster("Bubbles", 1);
    assertEquals(testMonster.getFoodLevel(), (Monster.MAX_FOOD_LEVEL / 2));
  }
+// Running a test method to check if our monster is alive or dead.
+ @Test
+ public void isAlive_confirmsMonsterIsAliveIfAllLevelsAboveMinimum_true(){
+   Monster testMonster = new Monster("Bubbles", 1);
+   assertEquals(testMonster.isAlive(), true);
+ }
 
 }
