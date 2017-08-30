@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import org.sq12o.*;
 
 public class Monster {
@@ -41,4 +43,11 @@ public void save() {
       .getKey();
   }
 }
+
+public static List<Monster> all() {
+    String sql = "SELECT * FROM monsters";
+    try(Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql).executeAndFetch(Monster.class);
+    }
+  }
 }

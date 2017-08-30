@@ -38,7 +38,7 @@ public void save_returnsTrueIfDescriptionsAretheSame() {
   testMonster.save();
   assertTrue(Monster.all().get(0).equals(testMonster));
 }
-
+//Testing the monsters id Attribute.
 @Test
 public void save_assignsIdToMonster() {
   Monster testMonster = new Monster("Bubbles", 1);
@@ -46,5 +46,16 @@ public void save_assignsIdToMonster() {
   Monster savedMonster = Monster.all().get(0);
   assertEquals(savedMonster.getId(), testMonster.getId());
 }
+
+//Using an all() to test the two instances of monsters.
+@Test
+ public void all_returnsAllInstancesOfMonster_true() {
+   Monster firstMonster = new Monster("Bubbles", 1);
+   firstMonster.save();
+   Monster secondMonster = new Monster("Spud", 1);
+   secondMonster.save();
+   assertEquals(true, Monster.all().get(0).equals(firstMonster));
+   assertEquals(true, Monster.all().get(1).equals(secondMonster));
+ }
 
 }
