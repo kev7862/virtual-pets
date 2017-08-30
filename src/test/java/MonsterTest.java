@@ -25,4 +25,11 @@ public void Monster_instatiatesWithPersonId_int() {
   assertEquals(1, testMonster.getPersonId());
 }
 
+@Test
+Public void equals_returnsTrueIfNameAndPersonIdAreSame_true() {
+  monster testMonster = new Monster("Bubbles", 1);
+  Monster anotherMonster = new Monster("Bubbles", 1);
+  assertTrue(testMonster.equals(anotherMonster));
+}
+
 }
