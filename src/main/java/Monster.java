@@ -3,6 +3,7 @@ import org.sq12o.*;
 public class Monster {
   private String name;
   private int personId;
+  private int id;
 
   public Monster(String name, int personId) {
     this.name = name;
@@ -14,6 +15,10 @@ public class Monster {
 
   public int getPersonId() {
     return personId
+  }
+
+  public int getId() {
+    return id;
   }
 
   @Override

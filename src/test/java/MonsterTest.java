@@ -39,4 +39,12 @@ public void save_returnsTrueIfDescriptionsAretheSame() {
   assertTrue(Monster.all().get(0).equals(testMonster));
 }
 
+@Test
+public void save_assignsIdToMonster() {
+  Monster testMonster = new Monster("Bubbles", 1);
+  testMonster.save();
+  Monster savedMonster = Monster.all().get(0);
+  assertEquals(savedMonster.getId(), testMonster.getId());
+}
+
 }
